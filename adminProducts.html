@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Products</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body class=" from-gray-100 to-gray-200 min-h-screen bg-[#2F5D62]">
+  <div class="flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <aside
+      class="w-[280px] text-white flex flex-col px-6 py-10 shadow-2xl">
+      <h2 class="text-3xl font-extrabold mb-16 text-center tracking-wide">
+         Admin Panel
+      </h2>
+
+      <nav class="space-y-6">
+        <a href="./order.html"
+          class="flex items-center gap-4 px-6 py-4 rounded-xl text-xl font-semibold bg-white/10 hover:bg-white/20 transition-all duration-300">
+          <i class="fa-solid fa-cart-shopping text-2xl"></i>
+          Orders
+        </a>
+
+        <a href="./adminProducts.html"
+          class="flex items-center gap-4 px-6 py-4 rounded-xl text-xl font-semibold bg-white text-blue-800 shadow-lg">
+          <i class="fa-solid fa-box text-2xl"></i>
+          Products
+        </a>
+
+        <a href="./index.html"
+          class="flex items-center gap-4 px-6 py-4 rounded-xl text-xl font-semibold bg-white text-blue-800 shadow-lg">
+          Back
+        </a>
+         
+      </nav>
+    </aside>
+
+    <main class="flex-1 p-10">
+
+      <div
+        class="flex justify-between items-center bg-white rounded-2xl shadow-lg px-8 py-6 mb-10">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800">Our Products</h1>
+          <p class="text-gray-500 mt-1">Manage all coffee products</p>
+        </div>
+
+        <button onclick="handleRefreshCofe()"
+          class="px-8 py-3 rounded-xl text-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:scale-105 text-white transition-all shadow-lg">
+          <i class="fa-solid fa-plus mr-2"></i> Add Product
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 ">
+
+        <div class="lg:col-span-2 rounded-2xl shadow-lg p-6 overflow-x-auto bg-[#CFE3DC] ">
+          <table class="w-full text-left bg-[#CFE3DC]">
+            <thead>
+              <tr class="border-b text-gray-600">
+                <th class="py-4 font-bold">ID</th>
+                <th class="py-4 font-bold">Image</th>
+                <th class="py-4 font-bold">Name</th>
+                <th class="py-4 font-bold">Price</th>
+                <th class="py-4 font-bold text-center">Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="productTable" class="text-lg">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-[#CFE3DC] rounded-2xl shadow-lg p-8">
+          <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+            Add Product
+          </h2>
+
+          <div class="space-y-4">
+            <input id="cofe-name"
+              class="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder=" Product name" type="text" />
+
+            <input id="cofe-description"
+              class="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder=" Product description" type="text" />
+
+            <input id="cofe-price"
+              class="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder=" Product price" type="number" />
+
+            <select id="img-select"
+              class="w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value=""> Select image</option>
+            </select>
+          </div>
+
+          <button onclick="handleSaveCofe()"
+            class="w-full mt-6 py-3 rounded-xl text-xl  hover:scale-105 text-white transition-all shadow-lg bg-[#2F5D62]">
+             Save Product
+          </button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
